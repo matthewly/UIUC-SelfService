@@ -1,0 +1,129 @@
+<html>
+<head>
+    <title>Course Registration</title>
+	<!-- import stylesheets -->
+	<link rel='stylesheet' href='styles/registration.css' />
+    <link rel="stylesheet" type="text/css" href="styles/jquery.sidr.light.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+	<!-- import scripts -->
+	<script src='https://code.jquery.com/jquery-1.11.3.min.js'></script>
+    <script src="js/jquery.sidr.min.js"></script>
+</head>
+<body>
+	<!-- NAVIGATION -->
+	<div class="nav">
+    	<div class="row">
+    	    <div class="col-md-6 school">UNIVERSITY OF ILLINOIS</div>
+    	    <div class="col-md-6 menu">
+    	        <ul class="right">
+    	            <a href="#"><li>Registration</li></a>
+    	            <a href="add.html"><li>Add/Drop</li></a>
+    	            <a href="calendar.html"><li>Calendar</li></a>
+                    <a href="#"><li><i class="fa fa-shopping-cart fa-lg"></i></li></a>
+                    <a href="#"><li><i class="fa fa-user fa-lg"></i></li></a>
+    	        </ul>
+    	    </div>
+    	</div>
+    	<div id="logo">
+    	    <img src="http://identitystandards.illinois.edu/assets/images/i_mark_bold.	png">
+    	</div>  
+	</div>
+
+    <div class="row">
+        <div class="col-md-9">
+            <a href="#sidr" id="toggle">CLICK HERE TO toggle</a>
+
+        </div>
+        <div class="col-md-3 desc">
+            
+        </div>
+    </div>
+
+    <div id="sidr">
+        <div class="row border-bottom">
+            <a href="#sidr" class="closeSide" id="toggle"><div class="col-md-3 center border-right"><i class="fa fa-angle-right fa-5x "></i></div></a>
+            <div class="col-md-9 center" id="sidr-header"><b>MATH 415</b></div>
+        </div>
+
+        <h2>Lecture</h2>
+        <table class="table table-bordered">
+            <th>CRN</th>
+            <th>Section</th>
+            <th>Time</th>
+            <th>Location</th>
+            <tr>
+                <td><input type="checkbox"> 60541</td>
+                <td>AL1</td>
+                <td>8-9am</td>
+                <td>41 Altgeld</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"> 60541</td>
+                <td>AL1</td>
+                <td>8-9am</td>
+                <td>41 Altgeld</td>
+            </tr>
+        </table>
+
+        <h2>Discussion</h2>
+        <table class="table table-bordered">
+            <th>CRN</th>
+            <th>Section</th>
+            <th>Time</th>
+            <th>Location</th>
+            <tr>
+                <td><input type="checkbox">60541</td>
+                <td>AL1</td>
+                <td>8-9am</td>
+                <td>41 Altgeld</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox">60541</td>
+                <td>AL1</td>
+                <td>8-9am</td>
+                <td>41 Altgeld</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox">60541</td>
+                <td>AL1</td>
+                <td>8-9am</td>
+                <td>41 Altgeld</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox">60541</td>
+                <td>AL1</td>
+                <td>8-9am</td>
+                <td>41 Altgeld</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox">60541</td>
+                <td>AL1</td>
+                <td>8-9am</td>
+                <td>41 Altgeld</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox">60541</td>
+                <td>AL1</td>
+                <td>8-9am</td>
+                <td>41 Altgeld</td>
+            </tr>
+        </table>
+    </div>
+	
+
+	<script>
+        $(document).ready(function() {
+            $('#toggle').sidr({
+                side: 'right',
+                displace: false
+            });
+            $('.closeSide').click(function() {
+
+                $('#toggle').trigger( "click" );
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<html>
+<head>
+    <title>Schedule</title>
+	<!-- import stylesheets -->
+	<link rel='stylesheet' href='fullcalendar-2.4.0/fullcalendar.css' />
+	<link rel='stylesheet' href='styles/calendar.css' />
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+	<!-- import scripts -->
+	<script src='https://code.jquery.com/jquery-1.11.3.min.js'></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.6/moment.min.js'></script>
+	<script src='fullcalendar-2.4.0/fullcalendar.js'></script>
+	<script>
+		$(document).ready(function() {
+
+		    // page is now ready, initialize the calendar...
+		
+		    $('#calendar').fullCalendar({
+                header: {
+                    left: 'prev, next today',
+                    center: 'title',
+                    right: 'month, agendaWeek, agendaDay'
+                },
+                businessHours: {
+                    start: '08:00',
+                    end: '20:00',
+                    dow: [1, 2, 3, 4, 5]
+                },
+                minTime: '08:00',
+                maxTime: '20:00',
+                weekends: false,
+                allDaySlot: false,
+                defaultView: 'agendaWeek',
+                height: 'auto',
+                defaultDate: '2015-11-09',
+                events: [
+                    {
+                        title: 'Math 415-Everitt 151',
+                        start: '2015-11-09T10:00:00',
+                        end: '2015-11-09T10:50:00',
+                        color: 'blue'
+                    },
+                    {
+                        title: 'Math 415-Everitt 151',
+                        start: '2015-11-11T10:00:00',
+                        end: '2015-11-11T10:50:00',
+                        color: 'blue'
+                    },
+                    {
+                        title: 'Math 415-Everitt 151',
+                        start: '2015-11-13T10:00:00',
+                        end: '2015-11-13T10:50:00',
+                        color: 'blue'
+                    },
+                    {
+                        title: 'STAT 400-Mumford 103',
+                        start: '2015-11-09T11:00:00',
+                        end: '2015-11-09T11:50:00'
+                    },
+                    {
+                        title: 'STAT 400-Mumford 103',
+                        start: '2015-11-11T11:00:00',
+                        end: '2015-11-11T11:50:00'
+                    },
+                    {
+                        title: 'STAT 400-Mumford 103',
+                        start: '2015-11-13T11:00:00',
+                        end: '2015-11-13T11:50:00'
+                    },
+                    {
+                        title: 'CS 465-DCL 1320',
+                        start: '2015-11-10T12:30:00',
+                        end: '2015-11-10T13:45:00'
+                    },
+                    {
+                        title: 'CS 465-DCL 1320',
+                        start: '2015-11-12T12:30:00',
+                        end: '2015-11-12T13:45:00'
+                    },
+                    {
+                        title: 'ECE 411-ECEB 1015',
+                        start: '2015-11-10T14:00:00',
+                        end: '2015-11-10T15:20:00'
+                    },
+                    {
+                        title: 'ECE 411-ECEB 1015',
+                        start: '2015-11-12T14:00:00',
+                        end: '2015-11-12T15:20:00'
+                    },
+
+                ]
+            });
+		
+		});
+	</script>
+</head>
+<body>
+	<!-- NAVIGATION -->
+	<div class="nav">
+    	<div class="row">
+    	    <div class="col-md-6 school">UNIVERSITY OF ILLINOIS</div>
+    	    <div class="col-md-6 menu">
+    	        <ul class="right">
+    	            <a href="registration.html"><li>Registration</li></a>
+    	            <a href="add.html"><li>Add/Drop</li></a>
+    	            <a href="#"><li>Calendar</li></a>
+                    <a href="#"><li><i class="fa fa-shopping-cart fa-lg"></i></li></a>
+                    <a href="#"><li><i class="fa fa-user fa-lg"></i></li></a>
+    	        </ul>
+    	    </div>
+    	</div>
+    	<div id="logo">
+    	    <img src="http://identitystandards.illinois.edu/assets/images/i_mark_bold.	png">
+    	</div>  
+	</div>
+
+    <h1>Student Schedule</h1>
+    <hr>
+
+    <div class="checkbox">
+       <label>
+         <input type="checkbox"> Include Wishlist
+       </label>
+     </div>
+
+    <div class="row calendar">
+        <div class="col-md-9">
+            <!-- CALENDAR -->
+            <div id='calendar'></div>
+        
+            <!-- SHARE -->
+            <div class="share">
+                <ul>
+                    <li><a href="#">Shareable Link</a> | </li>
+                    <li><a href="#">Download</a> | </li>
+                    <li><a href="#">Print</a> | </li>
+                    <li><a href="#">Share via </a><img src="http://www.cbc.ca/radio-content/assets/images/facebook_logo.png"        height="18" width="18"> <img src="http://www.milestonemktg.com/wp-content/uploads/2014/04/twitter-logo.jpg  " height="18" width="18"> <img src="http://centerstageboca.com/wp-content/uploads/2015/06/Instagram-logo.png" height="18" width="18"> </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-3 desc">
+            <h2>Math 415</h2>
+            <h3>Section: AL2</h3>
+            <h4>Fall 2015 - Urbana-Champaign</h4>
+
+            <hr>
+
+            <dl class="dl-horizontal">
+              <dt>Credits:</dt>
+              <dd>3.000</dd>
+              <dt>Course Type:</dt>
+              <dd>Undergrate</dd>
+              <dt>Instructor:</dt>
+              <dd>Maarten J Bergrett</dd>
+              <dt>Class:</dt>
+              <dd>Lecture</dd>
+              <dt>Date Range:</dt>
+              <dd>08/24/15 - 12/09/15</dd>
+              <dt>Time:</dt>
+              <dd>10:00am - 10:50am</dd>
+              <dt>Days:</dt>
+              <dd>MWF</dd>
+              <dt>Friends:</dt>
+              <dd><img class="img-circle" src="img/facebook_pic.jpg"><img class="img-circle" src="img/facebook_pic.jpg"><img class="img-circle" src="img/facebook_pic.jpg"></dd>
+            </dl>
+        </div>
+    </div>
+	
+	
+</div>
+	
+	
+</body>
+</html>
