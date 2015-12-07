@@ -1,53 +1,253 @@
 <html>
 <head>
     <title>Course Registration</title>
-	<!-- import stylesheets -->
-	<link rel='stylesheet' href='styles/registration.css' />
+    <!-- import stylesheets -->
     <link rel="stylesheet" type="text/css" href="styles/jquery.sidr.light.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel='stylesheet' href='styles/registration.css' />
 
-	<!-- import scripts -->
-	<script src='https://code.jquery.com/jquery-1.11.3.min.js'></script>
+    <!-- import scripts -->
+    <script src='https://code.jquery.com/jquery-1.11.3.min.js'></script>
     <script src="js/jquery.sidr.min.js"></script>
 </head>
 <body>
-	<!-- NAVIGATION -->
-	<div class="nav">
-    	<div class="row">
-    	    <div class="col-md-6 school">UNIVERSITY OF ILLINOIS</div>
-    	    <div class="col-md-6 menu">
-    	        <ul class="right">
-    	            <a href="#"><li>Registration</li></a>
-    	            <a href="add.html"><li>Add/Drop</li></a>
-    	            <a href="calendar.html"><li>Calendar</li></a>
+    <!-- NAVIGATION -->
+    <div class="nav">
+        <div class="row">
+            <div class="col-md-6 school">UNIVERSITY OF ILLINOIS</div>
+            <div class="col-md-6 menu">
+                <ul class="right">
+                    <a href="#"><li>Registration</li></a>
+                    <a href="add.html"><li>Add/Drop</li></a>
+                    <a href="calendar.html"><li>Calendar</li></a>
                     <a href="#"><li><i class="fa fa-shopping-cart fa-lg"></i></li></a>
                     <a href="#"><li><i class="fa fa-user fa-lg"></i></li></a>
-    	        </ul>
-    	    </div>
-    	</div>
-    	<div id="logo">
-    	    <img src="http://identitystandards.illinois.edu/assets/images/i_mark_bold.	png">
-    	</div>  
-	</div>
-
-    <div class="row">
-        <div class="col-md-9">
-            <a href="#sidr" id="toggle">CLICK HERE TO toggle</a>
-
+                </ul>
+            </div>
         </div>
-        <div class="col-md-3 desc">
+        <div id="logo">
+            <img src="http://identitystandards.illinois.edu/assets/images/i_mark_bold.  png">
+        </div>  
+    </div>
+
+    <!-- REGISTRATION PATHS -->
+
+
+    <!-- Tony's section -->
+        
+        <script>
             
+            $(document).ready(function(){
+                              $('.aimage').click(function(e){
+                                                 var imgsrc1 = 'img/deepButton.png';
+                                                 var imghref1 = "img/deepButton.png";
+                                                 var imgsrc2 ="img/orangeButton.png";
+                                                 var imghref2 = "img/orangeButton.png";
+                                                 var that = $(this);
+                                                 var co1 = "#0056a8";
+                                                 var co2 = "#4c4c4c";
+                                                 if(that.attr("src") == imgsrc1){
+                                                 that.attr("src",imgsrc2);
+                                                 
+                                                 setTimeout(function() {
+                                                            that.parent().attr("href",imghref2);
+                                                            }, 10);
+                                                 if(that.attr("id")=="one" && that.attr("src")==imgsrc2)
+                                                 {
+                                                 document.getElementById("ENGR").style.color = co1;
+                                                 }
+                                                 if(that.attr("id")=="two" && that.attr("src")==imgsrc2)
+                                                 {
+                                                 document.getElementById("CSR").style.color = co1;
+                                                 }
+                                                 if(that.attr("id")=="three" && that.attr("src")==imgsrc2)
+                                                 {
+                                                 document.getElementById("TECH").style.color = co1;
+                                                 }
+                                                 if(that.attr("id")=="four" && that.attr("src")==imgsrc2)
+                                                 {
+                                                 document.getElementById("HUMART").style.color = co1;
+                                                 }
+                                                 if(that.attr("id")=="five" && that.attr("src")==imgsrc2)
+                                                 {
+                                                 document.getElementById("SCO").style.color = co1;
+                                                 }
+                                                 if(that.attr("id")=="six" && that.attr("src")==imgsrc2)
+                                                 {
+                                                 document.getElementById("WES").style.color = co1;
+                                                 }
+                                                 if(that.attr("id")=="seven" && that.attr("src")==imgsrc2)
+                                                 {
+                                                 document.getElementById("NONWES").style.color = co1;
+                                                 }
+                                                 if(that.attr("id")=="eight" && that.attr("src")==imgsrc2)
+                                                 {
+                                                 document.getElementById("FREE").style.color = co1;
+                                                 }
+                                                 }else{
+                                                 that.attr("src",imgsrc1);
+                                                 setTimeout(function() {
+                                                            that.parent().attr("href",imghref1);
+                                                            }, 10);
+                                                 if(that.attr("id")=="one" && that.attr("src")==imgsrc1)
+                                                 {
+                                                 document.getElementById("ENGR").style.color = co2;
+                                                 }
+                                                 if(that.attr("id")=="two" && that.attr("src")==imgsrc1)
+                                                 {
+                                                 document.getElementById("CSR").style.color = co2;
+                                                 }
+                                                 if(that.attr("id")=="three" && that.attr("src")==imgsrc1)
+                                                 {
+                                                 document.getElementById("TECH").style.color = co2;
+                                                 }
+                                                 if(that.attr("id")=="four" && that.attr("src")==imgsrc1)
+                                                 {
+                                                 document.getElementById("HUMART").style.color = co2;
+                                                 }
+                                                 if(that.attr("id")=="five" && that.attr("src")==imgsrc1)
+                                                 {
+                                                 document.getElementById("SCO").style.color = co2;
+                                                 }
+                                                 if(that.attr("id")=="six" && that.attr("src")==imgsrc1)
+                                                 {
+                                                 document.getElementById("WES").style.color = co2;
+                                                 }
+                                                 if(that.attr("id")=="seven" && that.attr("src")==imgsrc1)
+                                                 {
+                                                 document.getElementById("NONWES").style.color = co2;
+                                                 }
+                                                 if(that.attr("id")=="eight" && that.attr("src")==imgsrc1)
+                                                 {
+                                                 document.getElementById("FREE").style.color = co2;
+                                                 }
+                                                 }
+                                              
+                                                
+                                                 
+                                                 
+                                                 })
+                              
+                              })
+                       
+            </script>
+        <div style="position: relative; top: 15px; left: 0px; width: 300px; height: 150px;">
+        
+            <div style="position: absolute; top: 20px; left: 0px; width: 823px; height: 335px; ">
+                <img src ="img/tree.png" class="" height="568px" width="658px">
+            </div>
+            <div style="position: absolute; top: 300px; left: 10px; width: 823px; height: 335px; ">
+                <p style="font-family:Calibri;color:#4c4c4c;font-size:130%">Major</p>
+            </div>
+            <div style="position: absolute; top: 330px; left: 10px; width: 823px; height: 335px; ">
+                <p id="MAJOR" style="font-family:Arial;color:#4c4c4c;font-size:110%">Computer Science</p>
+            </div>
+            <!-- first -->
+            <div style="position: absolute; top: 45px; left: 315px; width: 213px; height: 50px; ">
+                <img src ="img/grayButton.png" id="ini" height="50" width="213">
+                <div style="position: absolute; top: 14px; left: 31px; width: 213px; height: 50px; ">
+                    <p style="font-family:verdana;color:#c2c2c2" >REQUIRED COURSES</p>
+                </div>
+        
+        
+            </div>
+            
+            <div style="position: absolute; top: -3px; left: 657px; width: 213px; height: 50px;">
+                 <div style="position: absolute; top: 14px; left: 26px; width: 213px; height: 50px; ">
+                     <p id="ENGR" style="font-family:verdana;color:#4c4c4c">ENGR REQUIREMENTS</p>
+                 </div>
+                 <div style="position: absolute; top: 0px; left: 0px; width: 213px; height: 50px;">
+                     <img src ="img/deepButton.png" id="one" class="aimage" height="50" width="213">
+                 </div>
+            </div>
+            
+            <div style="position: absolute; top: 90px; left: 657px; width: 213px; height: 50px;">
+                <div style="position: absolute; top: 14px; left: 37px; width: 213px; height: 50px; ">
+                    <p id="CSR" style="font-family:verdana;color:#4C4C4C">CS REQUIREMENTS</p>
+                </div>
+                <div style="position: absolute; top: 0px; left: 0px; width: 213px; height: 50px;">
+                    <img src ="img/deepButton.png" id="two" class="aimage" height="50" width="213">
+                </div>
+            </div>
+            
+            <!-- second -->
+            <div style="position: absolute; top: 178px; left: 315px; width: 213px; height: 50px; ">
+                <div style="position: absolute; top: 14px; left: 23px; width: 213px; height: 50px; ">
+                    <p id="TECH" style="font-family:verdana;color:#4c4c4c">TECHNICAL ELECTIVES</p>
+                </div>
+                <div style="position: absolute; top: 0px; left: 0px; width: 213px; height: 50px;">
+                    <img src ="img/deepButton.png" id = "three" class="aimage" height="50" width="213">
+                </div>
+            </div>
+        
+            <!-- third -->
+            <div style="position: absolute; top: 430px; left: 315px; width: 213px; height: 50px; ">
+                <div style="position: absolute; top: 14px; left: 26px; width: 213px; height: 50px; ">
+                    <p id="GEN" style="font-family:verdana;color:#c2c2c2">GENERAL EDUCATION</p>
+                </div>
+                <div style="position: absolute; top: 0px; left: 0px; width: 213px; height: 50px;">
+                    <img src ="img/grayButton.png" height="50" width="213">
+                </div>
+            </div>
+            
+            <div style="position: absolute; top: 297px; left: 657px; width: 213px; height: 50px;">
+                <div style="position: absolute; top: 14px; left: 43px; width: 213px; height: 50px; ">
+                    <p id="HUMART" style="font-family:verdana;color:#4c4c4c">HUMANITY&ARTS</p>
+                </div>
+                <div style="position: absolute; top: 0px; left: 0px; width: 213px; height: 50px;">
+                    <img src ="img/deepButton.png" id="four" class="aimage" height="50" width="213">
+                </div>
+            </div>
+            
+            <div style="position: absolute; top: 364px; left: 657px; width: 213px; height: 50px; ">
+                <div style="position: absolute; top: 14px; left: 18px; width: 213px; height: 50px; ">
+                    <p id="SCO" style="font-family:verdana;color:#4c4c4c">SOCIAL&BEHAVIRAL SCI</p>
+                </div>
+                <div style="position: absolute; top: 0px; left: 0px; width: 213px; height: 50px;">
+                    <img src ="img/deepButton.png" id="five" class="aimage" height="50" width="213">
+                </div>
+            </div>
+            
+            <div style="position: absolute; top: 500px; left: 657px; width: 213px; height: 50px; ">
+                <div style="position: absolute; top: 14px; left: 36px; width: 213px; height: 50px; ">
+                    <p id="WES" style="font-family:verdana;color:#4c4c4c">WESTERN CULTURE</p>
+                </div>
+                <div style="position: absolute; top: 0px; left: 0px; width: 213px; height: 50px;">
+                    <img src ="img/deepButton.png" id="six" class="aimage" height="50" width="213">
+                </div>
+            </div>
+            <div style="position: absolute; top: 564px; left: 657px; width: 213px; height: 50px; ">
+                <div style="position: absolute; top: 14px; left: 55px; width: 213px; height: 50px; ">
+                    <p id="NONWES" style="font-family:verdana;color:#4c4c4c">NON-WESTERN</p>
+                </div>
+                <div style="position: absolute; top: 0px; left: 0px; width: 213px; height: 50px;">
+                    <img src ="img/deepButton.png" id="seven" class="aimage" height="50" width="213">
+                </div>
+            </div>
+            
+            <!-- forth -->
+            <div style="position: absolute; top: 560px; left: 315px; width: 213px; height: 50px; ">
+                <div style="position: absolute; top: 14px; left: 45px; width: 213px; height: 50px; ">
+                    <p id="FREE" style="font-family:verdana;color:#4c4c4c">FREE ELECTIVES</p>
+                </div>
+                <div style="position: absolute; top: 0px; left: 0px; width: 213px; height: 50px;">
+                    <img src ="img/deepButton.png" id="eight" class="aimage" height="50" width="213">
+                </div>
+            </div>
+        
+        
         </div>
-    </div>
+    <!-- END -->
 
-    <div id="sidr">
+    <!-- MATH 415 SIDE MENU -->
+    <div id="math" style="display:none">
         <div class="row border-bottom">
-            <a href="#sidr" class="closeSide" id="toggle"><div class="col-md-3 center border-right"><i class="fa fa-angle-right fa-5x "></i></div></a>
-            <div class="col-md-9 center" id="sidr-header"><b>MATH 415</b></div>
+            <a href="#" id="back-arrow"><div class="col-md-2"><i class="fa fa-angle-right fa-5x "></i></div></a>
+            <div class="col-md-10 sidr-header"><b>MATH 415</b></div>
         </div>
 
-        <h2>Lecture</h2>
+        <h4>Lecture</h4>
         <table class="table table-bordered">
             <th>CRN</th>
             <th>Section</th>
@@ -67,63 +267,345 @@
             </tr>
         </table>
 
-        <h2>Discussion</h2>
+        <h4>Discussion</h4>
         <table class="table table-bordered">
             <th>CRN</th>
             <th>Section</th>
             <th>Time</th>
             <th>Location</th>
             <tr>
-                <td><input type="checkbox">60541</td>
+                <td><input type="checkbox"> 60541</td>
                 <td>AL1</td>
                 <td>8-9am</td>
                 <td>41 Altgeld</td>
             </tr>
             <tr>
-                <td><input type="checkbox">60541</td>
+                <td><input type="checkbox"> 60541</td>
                 <td>AL1</td>
                 <td>8-9am</td>
                 <td>41 Altgeld</td>
             </tr>
             <tr>
-                <td><input type="checkbox">60541</td>
+                <td><input type="checkbox"> 60541</td>
                 <td>AL1</td>
                 <td>8-9am</td>
                 <td>41 Altgeld</td>
             </tr>
             <tr>
-                <td><input type="checkbox">60541</td>
-                <td>AL1</td>
-                <td>8-9am</td>
-                <td>41 Altgeld</td>
-            </tr>
-            <tr>
-                <td><input type="checkbox">60541</td>
-                <td>AL1</td>
-                <td>8-9am</td>
-                <td>41 Altgeld</td>
-            </tr>
-            <tr>
-                <td><input type="checkbox">60541</td>
+                <td><input type="checkbox"> 60541</td>
                 <td>AL1</td>
                 <td>8-9am</td>
                 <td>41 Altgeld</td>
             </tr>
         </table>
+
+        <button type="button" class="btn btn-success btn-block">Add to cart</button>
     </div>
-	
 
-	<script>
-        $(document).ready(function() {
-            $('#toggle').sidr({
-                side: 'right',
-                displace: false
-            });
-            $('.closeSide').click(function() {
+    <div class="no-padding side-menu height-fill-parent class-container">
+            <div class="side-menu-header">
+              <h3>Course List</h3>
+            </div>
+            <div class="side-menu-body">
+              <div class="list-group course-list">
 
-                $('#toggle').trigger( "click" );
-            });
+                <!-- ENGR REQ -->
+                <div id="engr-req" style="display:none">
+                    <a href="#" id="math415" class="list-group-item clearfix">
+                      <span class="pull-left">
+                          <button class="btn btn-default round-button">
+                          <span class="glyphicon glyphicon-plus grey"></span>
+                        </button>
+                      </span>
+                      <h4 class="list-group-item-heading"> MATH 415 <em>(3)</em></h4>
+                      <em class="list-group-item-text grey"> Applied Linear Algebra </em>
+                    </a>
+                    <a href="#" class="list-group-item clearfix">
+                      <span class="pull-left">
+                        <button class="btn btn-default round-button">
+                          <span class="glyphicon glyphicon-plus grey"></span>
+                        </button>
+                      </span>
+                      <h4 class="list-group-item-heading"> CHEM 102 <em>(3)</em></h4>
+                      <em class="list-group-item-text grey"> Discrete Structures</em>
+                    </a>
+                    <a href="#" class="list-group-item clearfix">
+                      <span class="pull-left">
+                        <button class="btn btn-default round-button">
+                          <span class="glyphicon glyphicon-plus grey"></span>
+                        </button>
+                      </span>
+                      <h4 class="list-group-item-heading"> CHEM 103 <em>(1)</em></h4>
+                      <em class="list-group-item-text grey"> Data Structures</em>
+                    </a>
+              </div>
+
+                <!-- CS REQ -->
+                <div id="cs-req" style="display:none">
+                    <a href="#" class="list-group-item clearfix">
+                      <span class="pull-left">
+                          <button class="btn btn-default round-button">
+                          <span class="glyphicon glyphicon-plus grey"></span>
+                        </button>
+                      </span>
+                      <h4 class="list-group-item-heading">CS 125 <em>(4)</em></h4>
+                      <em class="list-group-item-text grey">Intro to Computer Science</em>
+                    </a>
+                    <a href="#" class="list-group-item clearfix">
+                      <span class="pull-left">
+                        <button class="btn btn-default round-button">
+                          <span class="glyphicon glyphicon-plus grey"></span>
+                        </button>
+                      </span>
+                      <h4 class="list-group-item-heading">CS 173 <em>(4)</em></h4>
+                      <em class="list-group-item-text grey">Discrete Structures</em>
+                    </a>
+                    <a href="#" class="list-group-item clearfix">
+                      <span class="pull-left">
+                        <button class="btn btn-default round-button">
+                          <span class="glyphicon glyphicon-plus grey"></span>
+                        </button>
+                      </span>
+                      <h4 class="list-group-item-heading">CS 225 <em>(4)</em></h4>
+                      <em class="list-group-item-text grey">Data Structures</em>
+                    </a>
+                </div>
+
+                <!-- TECH REQ -->
+                <div id="tech-req" style="display:none">
+                    <a href="#" class="list-group-item clearfix">
+                      <span class="pull-left">
+                          <button class="btn btn-default round-button">
+                          <span class="glyphicon glyphicon-plus grey"></span>
+                        </button>
+                      </span>
+                      <h4 class="list-group-item-heading"> CS 357 <em>(3)</em></h4>
+                      <em class="list-group-item-text grey"> Numerical Methods I</em>
+                    </a>
+                    <a href="#" class="list-group-item clearfix">
+                      <span class="pull-left">
+                        <button class="btn btn-default round-button">
+                          <span class="glyphicon glyphicon-plus grey"></span>
+                        </button>
+                      </span>
+                      <h4 class="list-group-item-heading"> CS 427 <em>(3)</em></h4>
+                      <em class="list-group-item-text grey"> Software Engineering I</em>
+                    </a>
+                    <a href="#" class="list-group-item clearfix">
+                      <span class="pull-left">
+                        <button class="btn btn-default round-button">
+                          <span class="glyphicon glyphicon-plus grey"></span>
+                        </button>
+                      </span>
+                      <h4 class="list-group-item-heading"> CS 498 <em>(3)</em></h4>
+                      <em class="list-group-item-text grey"> Software Testing</em>
+                    </a>
+                </div>
+
+                <!-- HUMANITY REQ -->
+                <div id="human-req" style="display:none">
+                    <a href="#" class="list-group-item clearfix">
+                      <span class="pull-left">
+                          <button class="btn btn-default round-button">
+                          <span class="glyphicon glyphicon-plus grey"></span>
+                        </button>
+                      </span>
+                      <h4 class="list-group-item-heading"> AFRO 106 <em>(3)</em></h4>
+                      <em class="list-group-item-text grey"> Hist Arch Americas</em>
+                    </a>
+                    <a href="#" class="list-group-item clearfix">
+                      <span class="pull-left">
+                        <button class="btn btn-default round-button">
+                          <span class="glyphicon glyphicon-plus grey"></span>
+                        </button>
+                      </span>
+                      <h4 class="list-group-item-heading"> AIS 285 <em>(3)</em></h4>
+                      <em class="list-group-item-text grey"> Indigenous Thinkers</em>
+                    </a>
+                    <a href="#" class="list-group-item clearfix">
+                      <span class="pull-left">
+                        <button class="btn btn-default round-button">
+                          <span class="glyphicon glyphicon-plus grey"></span>
+                        </button>
+                      </span>
+                      <h4 class="list-group-item-heading"> ART 350 <em>(3)</em></h4>
+                      <em class="list-group-item-text grey"> Writing with Video</em>
+                    </a>
+                </div>
+
+                <!-- SOCIAL REQ -->
+                <div id="social-req" style="display:none">
+                    <a href="#" class="list-group-item clearfix">
+                      <span class="pull-left">
+                          <button class="btn btn-default round-button">
+                          <span class="glyphicon glyphicon-plus grey"></span>
+                        </button>
+                      </span>
+                      <h4 class="list-group-item-heading"> AAS 184 <em>(3)</em></h4>
+                      <em class="list-group-item-text grey"> Asian American Cultures</em>
+                    </a>
+                    <a href="#" class="list-group-item clearfix">
+                      <span class="pull-left">
+                        <button class="btn btn-default round-button">
+                          <span class="glyphicon glyphicon-plus grey"></span>
+                        </button>
+                      </span>
+                      <h4 class="list-group-item-heading"> AFRO 243 <em>(3)</em></h4>
+                      <em class="list-group-item-text grey"> Pan Africanism</em>
+                    </a>
+                    <a href="#" class="list-group-item clearfix">
+                      <span class="pull-left">
+                        <button class="btn btn-default round-button">
+                          <span class="glyphicon glyphicon-plus grey"></span>
+                        </button>
+                      </span>
+                      <h4 class="list-group-item-heading"> ANTH 104 <em>(3)</em></h4>
+                      <em class="list-group-item-text grey"> Talking Culture</em>
+                    </a>
+                </div>
+
+                <!-- WESTERN -->
+                <div id="western-req" style="display:none">
+                    <a href="#" class="list-group-item clearfix">
+                      <span class="pull-left">
+                          <button class="btn btn-default round-button">
+                          <span class="glyphicon glyphicon-plus grey"></span>
+                        </button>
+                      </span>
+                      <h4 class="list-group-item-heading"> CLCV 114 <em>(3)</em></h4>
+                      <em class="list-group-item-text grey"> Intro to Greek Culture</em>
+                    </a>
+                    <a href="#" class="list-group-item clearfix">
+                      <span class="pull-left">
+                        <button class="btn btn-default round-button">
+                          <span class="glyphicon glyphicon-plus grey"></span>
+                        </button>
+                      </span>
+                      <h4 class="list-group-item-heading"> CWL 202 <em>(3)</em></h4>
+                      <em class="list-group-item-text grey"> Literature and Ideas</em>
+                    </a>
+                    <a href="#" class="list-group-item clearfix">
+                      <span class="pull-left">
+                        <button class="btn btn-default round-button">
+                          <span class="glyphicon glyphicon-plus grey"></span>
+                        </button>
+                      </span>
+                      <h4 class="list-group-item-heading"> CWL 251 <em>(3)</em></h4>
+                      <em class="list-group-item-text grey"> Viking Mythology</em>
+                    </a>
+                </div>
+
+                <!-- EASTERN REQ -->
+                <div id="eastern-req" style="display:none">
+                    <a href="#" class="list-group-item clearfix">
+                      <span class="pull-left">
+                          <button class="btn btn-default round-button">
+                          <span class="glyphicon glyphicon-plus grey"></span>
+                        </button>
+                      </span>
+                      <h4 class="list-group-item-heading"> AAS 184 <em>(3)</em></h4>
+                      <em class="list-group-item-text grey"> Asian American Cultures</em>
+                    </a>
+                    <a href="#" class="list-group-item clearfix">
+                      <span class="pull-left">
+                        <button class="btn btn-default round-button">
+                          <span class="glyphicon glyphicon-plus grey"></span>
+                        </button>
+                      </span>
+                      <h4 class="list-group-item-heading"> ANTH 130 <em>(3)</em></h4>
+                      <em class="list-group-item-text grey"> History of South Asia</em>
+                    </a>
+                    <a href="#" class="list-group-item clearfix">
+                      <span class="pull-left">
+                        <button class="btn btn-default round-button">
+                          <span class="glyphicon glyphicon-plus grey"></span>
+                        </button>
+                      </span>
+                      <h4 class="list-group-item-heading"> EPS 402 <em>(43)</em></h4>
+                      <em class="list-group-item-text grey"> Asian American Education</em>
+                    </a>
+                </div> 
+
+                <!-- FREE REQ -->
+                <div id="free-req" style="display:none">
+                    <a href="#" class="list-group-item clearfix">
+                      <span class="pull-left">
+                          <button class="btn btn-default round-button">
+                          <span class="glyphicon glyphicon-plus grey"></span>
+                        </button>
+                      </span>
+                      <h4 class="list-group-item-heading"> PHYS 101 <em>(5)</em></h4>
+                      <em class="list-group-item-text grey"> College Physics</em>
+                    </a>
+                    <a href="#" class="list-group-item clearfix">
+                      <span class="pull-left">
+                        <button class="btn btn-default round-button">
+                          <span class="glyphicon glyphicon-plus grey"></span>
+                        </button>
+                      </span>
+                      <h4 class="list-group-item-heading"> ASTR 100 <em>(3)</em></h4>
+                      <em class="list-group-item-text grey"> Introduction to Astronomy </em>
+                    </a>
+                    <a href="#" class="list-group-item clearfix">
+                      <span class="pull-left">
+                        <button class="btn btn-default round-button">
+                          <span class="glyphicon glyphicon-plus grey"></span>
+                        </button>
+                      </span>
+                      <h4 class="list-group-item-heading"> STAT 100 <em>(3)</em></h4>
+                      <em class="list-group-item-text grey"> Statistics</em>
+                    </a>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          
+
+    <script>
+    $(document).ready(function(){
+        $('#one').click(function() {
+            $('#engr-req').toggle(); 
         });
+
+        $('#two').click(function() {
+            $('#cs-req').toggle();
+        });
+
+        $('#three').click(function() {
+            $('#tech-req').toggle();
+        });
+
+        $('#four').click(function() {
+            $('#human-req').toggle();
+        });
+
+        $('#five').click(function() {
+            $('#social-req').toggle();
+        });
+
+        $('#six').click(function() {
+            $('#western-req').toggle();
+        });
+
+        $('#seven').click(function() {
+            $('#eastern-req').toggle();
+        });        
+
+        $('#eight').click(function() {
+            $('#free-req').toggle();
+        });
+
+        $('#math415').click(function() {
+            $('#math').show();
+        });
+
+        $('#back-arrow').click(function() {
+            $('#math').hide();
+        });
+    });
     </script>
+
 </body>
 </html>

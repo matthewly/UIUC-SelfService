@@ -2,7 +2,7 @@
 <head>
     <title>Add/Drop Courses</title>
 	<!-- import stylesheets -->
-	<link rel='stylesheet' href='styles/registration.css' />
+	<link rel='stylesheet' href='styles/add.css' />
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
@@ -17,7 +17,7 @@
     	    <div class="col-md-6 menu">
     	        <ul class="right">
     	            <a href="registration.html"><li>Registration</li></a>
-    	            <a href="#"><li>Add/Drop</li></a>
+    	            <a id="add-drop-btn" href="#about"><li>Add/Drop</li></a>
     	            <a href="calendar.html"><li>Calendar</li></a>
                     <a href="#"><li><i class="fa fa-shopping-cart fa-lg"></i></li></a>
                     <a href="#"><li><i class="fa fa-user fa-lg"></i></li></a>
@@ -29,15 +29,201 @@
     	</div>  
 	</div>
 
-    <div class="row">
-        <div class="col-md-9">
-            
+    <!-- ADD/DROP CLASSES -->
+
+    <!-- Main component -->
+      <div class="container-fluid" role="main">
+
+       
+
+        <!-- Add/Drop Content -->
+        <div id="add-drop-content">
+          
         </div>
-        <div class="col-md-3 desc">
-            
-        </div>
-    </div>
-	
+        <div class="modal fade" id="confirmModal">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title">Attention</h4>
+                </div>
+                <div class="modal-body">
+                  <p>YOU WON'T SEE ME</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  <button id="confirm-drop" type="button" class="btn btn-primary">Confirm</button>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+    
+
+
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    
+    <script type="text/javascript">
+
+    $(document).ready(function(){
+      // Prepare table data
+      var columnTitles = ["CRN", "Course", "Title", "Credits", "Level", "Start Date", "End Date", "Days", "Time", "Location", "Instructor", "Operation"];
+      var courses = [];
+      courses.push({
+        crn: "43388",
+        course: "CS 465",
+        title: "User Interface Design",
+        credits: "3.000",
+        level: "1U",
+        startDate: "Aug 24, 2015",
+        endDate: "Dec 09, 2015",
+        days: "TR",
+        time: "9:30 am - 10:45 am",
+        location: "1DCL 1320",
+        instructor: "Wai-Tat Fu"
+      });
+      courses.push({
+        crn: "30128",
+        course: "CS 421",
+        title: "Progrmg Languages & Compilers",
+        credits: "3.000",
+        level: "1U",
+        startDate: "Aug 24, 2015",
+        endDate: "Dec 09, 2015",
+        days: "TR",
+        time: "12:30 pm - 1:45 pm",
+        location: "Siebel Center for Comp Sci 1404",
+        instructor: "Gunter"
+      });
+      courses.push({
+        crn: "40196",
+        course: "MATH 415",
+        title: "Applied Linear Algebra",
+        credits: "3.000",
+        level: "1U",
+        startDate: "Aug 24, 2015",
+        endDate: "Dec 09, 2015",
+        days: "MWF",
+        time: "10:00 am - 10:50 am",
+        location: "1Everitt 151",
+        instructor: "Maarten J Bergvelt"
+      });
+      courses.push({
+        crn: "35030",
+        course: "STAT 400",
+        title: "Statistics and Probability I",
+        credits: "3.000",
+        level: "1U",
+        startDate: "Aug 24, 2015",
+        endDate: "Dec 09, 2015",
+        days: "MWF",
+        time: "11:00 am - 11:50 am",
+        location: "Mumford 103",
+        instructor: "Alexey G Stepanov"
+      });
+      courses.push({
+        crn: "29942",
+        course: "ECE 411",
+        title: "Computer Organization & Design",
+        credits: "3.000",
+        level: "1U",
+        startDate: "Aug 24, 2015",
+        endDate: "Dec 09, 2015",
+        days: "TR",
+        time: "2:00 pm - 3:20 am",
+        location: "ECEB 1015",
+        instructor: "Wen-Mei W Hwu"
+      });
+      courses.push({
+        crn: "36047",
+        course: "CS 440",
+        title: "Artificial Intelligence",
+        credits: "3.000",
+        level: "1U",
+        startDate: "Aug 24, 2015",
+        endDate: "Dec 09, 2015",
+        days: "TR",
+        time: "3:30 pm - 4:45 pm",
+        location: "Siebel Center for Comp Sci 1404",
+        instructor: "Svetlana Lazebnik"
+      });
+
+        $(document).attr("title", "Add/Drop");
+        $("#reg-content").hide();
+        $("#add-drop-content").empty();
+        drawTable(columnTitles, courses);
+    
+
+    // Modal triggered by clicking "Drop" button
+    $("#confirmModal").on("show.bs.modal", function (event) {
+      var modalShown = true;
+      var button = $(event.relatedTarget);
+      var index = button.data("courseindex");
+
+      var modal = $(this);
+      var totalCredit = 0;
+      for (var i = 0; i < courses.length; i++) {
+        if (i != index) {
+          totalCredit += parseInt(courses[i]["credits"]);
+        }
+      }
+
+      if (totalCredit < 12) {
+        modal.find(".modal-body p").text("You are not supposed to have less than 12 credits. Please contact your department.");
+        modal.find("#confirm-drop").hide();
+      } else {
+        modal.find(".modal-body p").html("Are you sure you want to drop <strong>" + courses[index]["course"] + "</strong>?");
+      }
+
+      $("#confirm-drop").unbind('click').click(function() {
+        if (modalShown) {
+          courses.splice(index, 1); // remove the selected course from data
+          $("#add-drop-content").empty();
+          drawTable(columnTitles, courses);
+          $("#confirmModal").modal("hide");
+          modalShown = false;
+        }
+      });
+    });
+
+    function drawTable(columnTitles, courses) {
+      // Head
+      var table = $("<table/>").addClass("table table-hover");
+      var tableHead = $("<thead/>");
+      var row = $("<tr/>");
+      for (var i = 0; i < columnTitles.length; i++) {
+        row.append($("<th/>").text(columnTitles[i]));
+      }
+      tableHead.append(row);
+      table.append(tableHead);
+
+      // Body
+      var totalCredit = 0;
+      for (var i = 0; i < courses.length; i++) {
+        row = $("<tr/>");
+        for (var prop in courses[i]) {
+          row.append($("<td/>").text(courses[i][prop]));
+          if (prop === "credits") {
+            totalCredit += parseInt(courses[i][prop]);
+          }
+        }
+        var dropBtn = $("<button/>")
+                      .text("Drop")
+                      .attr({'type': 'button', 
+                        'data-toggle': 'modal', 
+                        'data-target': '#confirmModal',
+                        'data-courseindex': i})
+                      .addClass("btn btn-danger");
+        row.append(dropBtn);
+        table.append(row);
+      }
+
+      $("#add-drop-content").append(table)
+      .append("Total Credits: <span id=\"total-credit\">" + totalCredit + "</span><br/>Max Credits: 18<br/>Min Credits: 12");
+    }
+  });
+</script>	
 
 	
 </body>

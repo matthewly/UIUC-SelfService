@@ -70,13 +70,13 @@
                     },
                     {
                         title: 'CS 465-DCL 1320',
-                        start: '2015-11-10T12:30:00',
-                        end: '2015-11-10T13:45:00'
+                        start: '2015-11-10T09:30:00',
+                        end: '2015-11-10T10:45:00'
                     },
                     {
                         title: 'CS 465-DCL 1320',
-                        start: '2015-11-12T12:30:00',
-                        end: '2015-11-12T13:45:00'
+                        start: '2015-11-12T09:30:00',
+                        end: '2015-11-12T10:45:00'
                     },
                     {
                         title: 'ECE 411-ECEB 1015',
@@ -88,12 +88,34 @@
                         start: '2015-11-12T14:00:00',
                         end: '2015-11-12T15:20:00'
                     },
+                    {
+                        title: 'CS 421-SIEB 1404',
+                        start: '2015-11-10T12:30:00',
+                        end: '2015-11-10T13:45:00'
+                    },
+                    {
+                        title: 'CS 421-SIEB 1404',
+                        start: '2015-11-12T12:30:00',
+                        end: '2015-11-12T13:45:00'
+                    },
+                    {
+                        title: 'CS 440-SIEB 1404',
+                        start: '2015-11-10T15:30:00',
+                        end: '2015-11-10T16:45:00'
+                    },
+                    {
+                        title: 'CS 440-SIEB 1404',
+                        start: '2015-11-12T15:30:00',
+                        end: '2015-11-12T16:45:00'
+                    },
 
                 ]
             });
 		
 		});
 	</script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 </head>
 <body>
 	<!-- NAVIGATION -->
@@ -115,6 +137,7 @@
     	</div>  
 	</div>
 
+
     <h1>Student Schedule</h1>
     <hr>
 
@@ -132,10 +155,10 @@
             <!-- SHARE -->
             <div class="share">
                 <ul>
-                    <li><a href="#">Shareable Link</a> | </li>
+                    <li id="shareablelink"><a href="#" data-toggle="modal" data-target="#myModal">Shareable Link</a> | </li>
                     <li><a href="#">Download</a> | </li>
                     <li><a href="#">Print</a> | </li>
-                    <li><a href="#">Share via </a><img src="http://www.cbc.ca/radio-content/assets/images/facebook_logo.png"        height="18" width="18"> <img src="http://www.milestonemktg.com/wp-content/uploads/2014/04/twitter-logo.jpg  " height="18" width="18"> <img src="http://centerstageboca.com/wp-content/uploads/2015/06/Instagram-logo.png" height="18" width="18"> </li>
+                    <li><a href="#" >Share via </a><img src="http://www.cbc.ca/radio-content/assets/images/facebook_logo.png"        height="18" width="18"> <img src="http://www.milestonemktg.com/wp-content/uploads/2014/04/twitter-logo.jpg  " height="18" width="18"> <img src="http://centerstageboca.com/wp-content/uploads/2015/06/Instagram-logo.png" height="18" width="18"> </li>
                 </ul>
             </div>
         </div>
@@ -169,7 +192,29 @@
 	
 	
 </div>
-	
+<!-- Button trigger modal -->
+<!--<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+  Launch demo modal
+</button>-->
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Sharing Information</h4>
+      </div>
+      <div class="modal-body">
+        <label for="recipient-name" class="control-label">Shareable link:</label>
+        https://www.uiuc-calendar.com/registration/week-at-a-glance
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 	
 </body>
 </html>

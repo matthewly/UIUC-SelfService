@@ -37,7 +37,7 @@
     font-size: 18px;
 }
 .nav #logo img {
-    position: fixed;
+    position: absolute;
     top: 0px;
     left: 20px;   
 }
@@ -45,4 +45,8 @@
 .right {
     position: absolute;
     right: 30px;
+}
+
+body {
+    background: url("../img/bg.jpg");
 }
