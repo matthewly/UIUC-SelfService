@@ -21,13 +21,13 @@
                     <a href="#"><li>Registration</li></a>
                     <a href="add.html"><li>Add/Drop</li></a>
                     <a href="calendar.html"><li>Calendar</li></a>
-                    <a href="#"><li><i class="fa fa-shopping-cart fa-lg"></i></li></a>
+                    <a href="#" id="cart-icon"><li><i class="fa fa-shopping-cart fa-lg"></i></li></a>
                     <a href="#"><li><i class="fa fa-user fa-lg"></i></li></a>
                 </ul>
             </div>
         </div>
         <div id="logo">
-            <img src="http://identitystandards.illinois.edu/assets/images/i_mark_bold.  png">
+            <img src="http://identitystandards.illinois.edu/assets/images/i_mark_bold.png">
         </div>  
     </div>
 
@@ -240,6 +240,38 @@
         </div>
     <!-- END -->
 
+    <!-- MATH 415 DESC SIDE MENU -->
+    <div id="math-desc" style="display:none">
+        <div class="row border-bottom">
+            <a href="#" id="back-arrow1"><div class="col-md-2"><i class="fa fa-angle-right fa-5x "></i></div></a>
+            <div class="col-md-10 sidr-header"><b>MATH 415</b></div>
+        </div>
+
+            <h3 style="text-align: center">Section: AL2</h3>
+            <h4 style="text-align: center">Fall 2015 - Urbana-Champaign</h4>
+
+            
+
+            <dl class="dl-horizontal">
+              <dt>Credits:</dt>
+              <dd>3.000</dd>
+              <dt>Course Type:</dt>
+              <dd>Undergrate</dd>
+              <dt>Instructor:</dt>
+              <dd>Maarten J Bergrett</dd>
+              <dt>Class:</dt>
+              <dd>Lecture</dd>
+              <dt>Date Range:</dt>
+              <dd>08/24/15 - 12/09/15</dd>
+              <dt>Time:</dt>
+              <dd>10:00am - 10:50am</dd>
+              <dt>Days:</dt>
+              <dd>MWF</dd>
+              <dt>Friends:</dt>
+              <dd><img class="img-circle" src="img/facebook_pic.jpg"><img class="img-circle" src="img/facebook_pic.jpg"><img class="img-circle" src="img/facebook_pic.jpg"></dd>
+            </dl>
+    </div>
+
     <!-- MATH 415 SIDE MENU -->
     <div id="math" style="display:none">
         <div class="row border-bottom">
@@ -299,7 +331,7 @@
             </tr>
         </table>
 
-        <button type="button" class="btn btn-success btn-block">Add to cart</button>
+        <button type="button" id="add-to-cart" class="btn btn-success btn-block">Add to cart</button>
     </div>
 
     <div class="no-padding side-menu height-fill-parent class-container">
@@ -311,9 +343,9 @@
 
                 <!-- ENGR REQ -->
                 <div id="engr-req" style="display:none">
-                    <a href="#" id="math415" class="list-group-item clearfix">
+                    <a href="#" id="math415-desc" class="list-group-item clearfix">
                       <span class="pull-left">
-                          <button class="btn btn-default round-button">
+                          <button class="btn btn-default round-button" id="math415">
                           <span class="glyphicon glyphicon-plus grey"></span>
                         </button>
                       </span>
@@ -561,6 +593,11 @@
             </div>
           </div>
 
+    <div id="cart" style="display: none;">
+        <ul class="list-group">
+        <li class="list-group-item">CS 374</li>
+      </ul>
+    </div>
           
 
     <script>
@@ -597,12 +634,37 @@
             $('#free-req').toggle();
         });
 
+
+        $('#math415-desc').click(function() {
+            $('#math-desc').toggle();
+            $('#engr-req').toggle(); 
+            $('.side-menu-header').hide();
+        });
+
         $('#math415').click(function() {
             $('#math').show();
+            $('#math-desc').toggle();
         });
+
 
         $('#back-arrow').click(function() {
             $('#math').hide();
+            $('#engr-req').toggle(); 
+            $('.side-menu-header').show();
+        });
+
+        $('#back-arrow1').click(function() {
+            $('#math-desc').toggle();
+            $('#engr-req').toggle(); 
+            $('.side-menu-header').show();
+        });        
+
+        $('#cart-icon').click( function() {
+            $('#cart').toggle();
+        });
+
+        $('#add-to-cart').click(function() {
+            $('#cart .list-group').append('<li class="list-group-item">MATH 415</li>');
         });
     });
     </script>

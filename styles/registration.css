@@ -101,7 +101,7 @@ table {
     margin-right: 5px;
 }
 
-.class-container, #math {
+.class-container, #math, #math-desc {
     position: absolute;
     right: 0;
     top: 60px;
@@ -110,7 +110,32 @@ table {
 }
 
 #math {
-    z-index: 9999;
+    z-index: 200;
+    top: 0px;
+}
+
+#math-desc {
+    z-index: 250;
+    background-color: #e0e0e0;
+    height: 100%;
+}
+
+.dl-horizontal dd{
+    right: 45px;
+    position: relative;
+    width: 160px;
+}
+
+.dl-horizontal dt{
+    width: 105px;
+}
+
+#math-desc .row {
+    margin-left: 0;
+}
+
+#math-desc dl {
+    text-align: left;
 }
 
 .side-menu-body {
@@ -120,5 +145,22 @@ table {
 }
 .class-container h3 {
     text-align: center;
+}
 
+.img-circle {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+#cart {
+    min-height: 100px;
+    width: 250px;
+    background-color: #F5F5F5;
+    border-style: solid;
+    border-width: 2px 2px 2px 2px;
+    position: absolute;
+    left: 78.5%;
+    top: 60px;
+    z-index: 9999;
 }

@@ -127,7 +127,7 @@
     	            <a href="registration.html"><li>Registration</li></a>
     	            <a href="add.html"><li>Add/Drop</li></a>
     	            <a href="#"><li>Calendar</li></a>
-                    <a href="#"><li><i class="fa fa-shopping-cart fa-lg"></i></li></a>
+                    <a href="#" id="cart-icon"><li><i class="fa fa-shopping-cart fa-lg"></i></li></a>
                     <a href="#"><li><i class="fa fa-user fa-lg"></i></li></a>
     	        </ul>
     	    </div>
@@ -148,7 +148,7 @@
      </div>
 
     <div class="row calendar">
-        <div class="col-md-9">
+        <div class="col-md-8">
             <!-- CALENDAR -->
             <div id='calendar'></div>
         
@@ -162,7 +162,7 @@
                 </ul>
             </div>
         </div>
-        <div class="col-md-3 desc">
+        <div class="col-md-4 desc">
             <h2>Math 415</h2>
             <h3>Section: AL2</h3>
             <h4>Fall 2015 - Urbana-Champaign</h4>
@@ -190,7 +190,13 @@
         </div>
     </div>
 	
-	
+	<div id="cart" style="display: none;">
+        <ul class="list-group">
+        <li class="list-group-item">CS 374</li>
+        <li class="list-group-item">MATH 415</li>
+      </ul>
+    </div>
+
 </div>
 <!-- Button trigger modal -->
 <!--<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
@@ -216,5 +222,13 @@
   </div>
 </div>
 	
+
+    <script>
+        $(document).ready(function(){
+            $('#cart-icon').click( function() {
+                $('#cart').toggle();
+            });
+        });
+    </script>
 </body>
 </html>
